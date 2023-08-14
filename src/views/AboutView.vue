@@ -1,7 +1,29 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <v-icon name="fa-flag"></v-icon>
-    <v-icon name="md-assignment"></v-icon>
+    <h1 class="text-black"> Nuevo Componente</h1>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'about-view',
+  // props: {},
+  data: function(){
+    return {}
+  },
+  // computed: {},
+  //methods: {}
+  // watch: {},
+  // components: {},
+  // mixins: [],
+  // filters: {},
+  // -- Lifecycle Methods
+  // -- End Lifecycle Methods
+}
+</script>
+
+<style scoped>
+  .about{
+    background-color: aliceblue;
+  }
+</style>
