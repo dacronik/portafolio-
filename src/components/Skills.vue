@@ -4,52 +4,26 @@
             <h2 class="mt-20 text-3xl font-semibold text-white">Skills</h2>
             <v-icon name="fa-equals" scale="2" flip="both" class="text-orange-500"></v-icon>
         </div>
-        <div class="flex flex-col md:flex-row gap-6 md:gap-16 lg:mx-36 justify-center mt-16 max-w-7xl">
-            <div class="skills flex flex-col justify-center items-center slide-left">
+        <div class="flex flex-col lg:flex-row gap-6 md:gap-8 justify-center mt-16">
+            <div class="skills flex flex-col justify-center items-center">
                 <h4 class="text-blue-300 text-center text-2xl">Hard Skills</h4>
-                <div class="service-item rounded-lg w-96">
-                    <div class="service-item-inner">
-                        <ul class="grid grid-cols-4 gap-8 justify-center p-8">
-                            <li class="text-center" v-for="icon in icons" :key="icon.name">
-                                <v-icon :name="icon.icon" :fill="icon.color" scale="3"></v-icon>
-                                <p class="text-white">{{ icon.name }}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <card-skill :icons="icons"/>
             </div>
             <div class="skills flex flex-col justify-center items-center slide-left">
                 <h4 class="text-blue-300 text-center text-2xl">Soft Skills</h4>
-                <div class="soft-items rounded-lg w-96">
-                    <div class="service-item-inner">
-                        <ul class="grid grid-cols-3 gap-2 justify-center p-2 md:p-8 md:gap-8">
-                            <li class="flex flex-col justify-center items-center" v-for="icon in soft_icons" :key="icon.name">
-                                <img :src="icon.url" alt="" style="width: 50px;">
-                                <p class="text-white">{{ icon.name }}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <soft-skill :icons="soft_icons"/>
             </div>
-            <div class="skills flex flex-col justify-center items-center slide-left">
+            <div class="skills flex flex-col justify-center items-center slide-left sm:mb-2">
                 <h4 class="text-blue-300 text-center text-2xl">Herramientas</h4>
-                <div class="herramientas-item rounded-lg w-96">
-                    <div class="service-item-inner">
-                        <ul class="grid grid-cols-4 gap-8 justify-center p-8">
-                            <li class="text-center" v-for="icon in herramientas" :key="icon.name">
-                                <v-icon :name="icon.icon" :fill="icon.color" scale="3"></v-icon>
-                                <p class="text-white">{{ icon.name }}</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <card-skill :icons="herramientas"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-
+import CardSkill from "@/components/CardSkill.vue"
+import SoftSkill from "./SoftSkill.vue";
 export default {
     name: 'component-name',
     // props: {},
@@ -97,7 +71,7 @@ export default {
                 },
 
                 {
-                    name: 'PostgreSQL',
+                    name: 'Postgre',
                     icon: 'vi-file-type-pgsql'
                 },
 
@@ -152,8 +126,8 @@ export default {
                     color:'#1C64F2'
                 },
                 {
-                    name: 'GitHub',
-                    icon: 'fa-github',
+                    name: 'SVG',
+                    icon: 'vi-file-type-svg',
                 },
                 {
                     name: 'Babel',
@@ -176,8 +150,8 @@ export default {
                     icon: 'vi-file-type-powershell2',
                 },
                 {
-                    name: 'SVG',
-                    icon: 'vi-file-type-svg',
+                    name: 'GitHub',
+                    icon: 'fa-github',
                 },
                 {
                     name: 'Webpack',
@@ -189,7 +163,10 @@ export default {
     // computed: {},
     methods: {},
     // watch: {},
-    components: {},
+    components: {
+        'card-skill':CardSkill,
+        'soft-skill':SoftSkill
+    },
     // mixins: [],
     // filters: {},
     // -- Lifecycle Methods
@@ -204,37 +181,4 @@ export default {
     background-color: #0F172A;
 }
 
-.slide-left {
-    animation: slide-left 0.7s linear both
-}
-
-@keyframes slide-left {
-    0% {
-        transform: translateX(200px)
-    }
-
-    100% {
-        transform: translateX(0px)
-    }
-}
-
-.service-item {
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(../assets/img/data.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
-.soft-items{
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(../assets/img/grafic.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.herramientas-item{
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url(../assets/img/database.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 </style>

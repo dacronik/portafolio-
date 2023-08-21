@@ -51,7 +51,7 @@ export default {
         background-color: #fff;
     }
     .perfil{
-        background-color: #0F172A;
+        background-color: #210640;
     }
     
     

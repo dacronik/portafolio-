@@ -1,8 +1,8 @@
 <template>
     <div
-        class="card mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
+        class="card mx-0 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
         <a href="#!">
-            <img class="rounded-t-lg w-full h-72" :src="image" alt="Skyscrapers" />
+            <img class="rounded-t-lg w-full h-72" loading="lazy" :src="image" alt="Skyscrapers" />
         </a>
         <div class="flex justify-center gap-2 mt-2">
             <a :href="gitLink" target="_blank"
@@ -29,9 +29,13 @@
             </p>
         </div>
         <div
-            class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600 dark:text-neutral-50 flex items-center justify-center flex-row gap-5">
-            tecnologias:
-            <small v-for="icon in icons"><v-icon :name="icon.name" :fill="icon.color" scale="2" animation="pulse"></v-icon></small>
+            class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600 dark:text-neutral-50 flex items-center justify-center flex-col gap-5">
+            <p>Tecnologias:</p>
+            <ul class="flex">
+                <li v-for="icon in icons">
+                    <v-icon :name="icon.name" :fill="icon.color" scale="2" animation="pulse"></v-icon>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -85,8 +89,7 @@ export default {
 
 <style scoped>
     .card:hover{
-        box-shadow: 13px 15px 37px #f75a00;
-        transform: scale(1.1);
-        transition: .7s;
+        /* drop-shadow: 13px 15px 37px #f75a00;   */
+        filter: drop-shadow(0 0 2em #f75a00);
     }
 </style>

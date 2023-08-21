@@ -9,7 +9,7 @@
 </div>
 
 <!-- drawer component -->
-<div id="drawer-body-scrolling" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-800 w-64 dark:bg-orange-500" tabindex="-1" aria-labelledby="drawer-body-scrolling-label">
+<div id="drawer-body-scrolling" class="fixed top-0 left-0 z-50 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-gray-800 w-64 dark:bg-orange-500" tabindex="-1" aria-labelledby="drawer-body-scrolling-label">
     <h5 id="drawer-body-scrolling-label" class="text-base font-semibold text-black uppercase dark:text-gray-400"><span class="text-orange-500 text-2xl">P</span>ortafolio</h5>
     <button type="button" data-drawer-hide="drawer-body-scrolling" aria-controls="drawer-body-scrolling" class="text-gray-400 bg-transparent hover:bg-orange-500 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -19,12 +19,12 @@
    </button>
   <div class="overflow-y-auto py-32 flex justify-center flex-col">
       <ul class="font-semibold space-y-32 pb-16 text-2xl" v-for="list in listNav" :key="list.title">
-        <v-item>
+        <li>
             <a data-drawer-hide="drawer-body-scrolling" :href="list.link" class="redirect flex pl-4 pb-2 text-blue-300 rounded-3xl dark:text-white hover:text-orange-500 hover:underline-offset-4 hover:decoration-8 hover:decoration-orange-500 dark:hover:bg-blue-300 group">
             <v-icon :name="list.icon" scale="2"></v-icon>
             <span class="ml-3">{{ list.title }}</span>
             </a>
-        </v-item>
+        </li>
       </ul>
    </div>
 </div>
@@ -61,7 +61,7 @@ export default {
                 },
                 {
                     title:'Contacto',
-                    link:'#',
+                    link:'#contacto',
                     icon:'md-contactmail'
                 },
             ]
