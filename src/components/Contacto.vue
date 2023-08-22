@@ -54,6 +54,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-blue-300 text-xs font-bold mb-2"
@@ -68,11 +69,12 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="form-name" value="contact">
                         <div class="md:flex md:items-center">
                             <div class="md:w-1/3">
                                 <button
                                     class="shadow bg-teal-400  focus:shadow-outline focus:outline-none text-blue-300 font-bold py-2 px-4 rounded hover:bg-orange-500"
-                                    type="button" @click.prevent="submitForm" data-modal-target="popup-modal"
+                                    type="submit" @click.prevent="submitForm" data-modal-target="popup-modal"
                                     data-modal-toggle="popup-modal">
                                     Enviar
                                 </button>
