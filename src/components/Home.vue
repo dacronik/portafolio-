@@ -10,16 +10,9 @@
         <p class="text-blue-300">Cocinero de código y un amante de la innovación, el constante aprendizaje y de llevar
           abstractas ideas a
           plataformas digitales, atractivas y funcionales</p>
-        <a @click="togleInfoOn" class="curriculum" download="">
+        <a class="curriculum" href="/gerardo.pdf" download="gerardo_ortiz_cv">
           Descarga mi CV
         </a>
-        <div v-if="toogleInfo">
-          <div
-            class="p-4 mb-4 mt-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-blue-200 dark:text-blue-800 transition-opacity duration-300 ease-out"
-            role="alert" :class="info">
-            <span class="font-medium">Info alerta!</span> El CV ha sido descargado!
-          </div>
-        </div>
       </div>
     </div>
     <div class="redes-sociales">
@@ -34,12 +27,12 @@
 </template>
   
 <script>
+
 export default {
   name: 'component-name',
   // props: {},
   data: function () {
     return {
-      toogleInfo: false,
       redes: [
         {
           name: "Linkedin",
@@ -65,8 +58,6 @@ export default {
   computed: {
     info(){
       return{
-        'duration':300,
-        togleInfoOn:false
       }
     }
   },
@@ -74,12 +65,7 @@ export default {
     redirectTo(url) {
       window.open(url, '_blank');
     },
-    togleInfoOn() {
-      this.toogleInfo = true;
-      setTimeout(() => {
-        this.toogleInfo=false
-      }, 1000);
-    }
+    
   },
   // watch: {},
   // components: {},
@@ -166,6 +152,7 @@ export default {
   letter-spacing: 1px;
   margin-top: 10px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .curriculum::before {
