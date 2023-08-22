@@ -74,12 +74,11 @@
                             <div class="md:w-1/3">
                                 <button
                                     class="shadow bg-teal-400  focus:shadow-outline focus:outline-none text-blue-300 font-bold py-2 px-4 rounded hover:bg-orange-500"
-                                    type="submit" @click.prevent="submitForm" data-modal-target="popup-modal"
-                                    data-modal-toggle="popup-modal">
+                                    type="submit" @click.prevent="submitForm">
                                     Enviar
                                 </button>
                             </div>
-                            <div class="md:w-2/3"></div>
+                            <div class="md:w-2/3"></div><input type="hidden" name="form-name" value="contact">
                         </div>
                     </form>
                 </div>
