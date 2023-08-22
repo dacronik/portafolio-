@@ -4,7 +4,7 @@
         <div class="forms flex justify-center items-center mt-12">
             <div class="container-form m-4">
                 <div class="container__login">
-                    <form class="w-full max-w-lg" ref="form" name="contact" method="post" data-netlify="true">
+                    <form class="w-full max-w-lg" ref="form" name="contact" method="post" data-netlify="true" onSubmit="submit">
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-blue-300 text-xs font-bold mb-2"
@@ -16,7 +16,7 @@
                                     @blur="v$.nombre.$touch"
                                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-orange-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     id="grid-first-name" type="text"
-                                    name="name" placeholder="Ej: Ana">
+                                    name="nombre" placeholder="Ej: Ana">
                                 <div class="input-errors" v-if="v$.nombre.$error">
                                     <p class="text-red-500 text-xs italic">{{ v$.nombre.$errors[0].$message }}</p>
                                 </div>
@@ -30,7 +30,7 @@
                                 @blur="v$.apellido.$touch" v-model="apellido" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-orange-500 rounded py-3 px-4 
                                     mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     id="grid-last-name" type="text"
-                                    name="lastName" 
+                                    name="apellido" 
                                     placeholder="Ej: Perez">
                                 <div class="input-errors" v-if="v$.apellido.$error">
                                     <p class="text-red-500 text-xs italic">{{ v$.apellido.$errors[0].$message }}</p>
@@ -61,7 +61,7 @@
                                     for="mensaje">
                                     Mensaje
                                 </label>
-                                <textarea name="message" v-model="mensaje" @blur="v$.mensaje.$touch"
+                                <textarea name="mensaje" v-model="mensaje" @blur="v$.mensaje.$touch"
                                     class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-orange-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                                     id="message"></textarea>
                                 <div class="input-error" v-if="v$.mensaje.$error">
