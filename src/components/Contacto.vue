@@ -4,7 +4,7 @@
         <div class="forms flex justify-center items-center mt-12">
             <div class="container-form m-4">
                 <div class="container__login">
-                    <form class="w-full max-w-lg" ref="form" name="contact" method="POST" data-netlify="true">
+                    <form class="w-full max-w-lg" ref="form" name="contact" method="post" data-netlify="true">
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label class="block uppercase tracking-wide text-blue-300 text-xs font-bold mb-2"
