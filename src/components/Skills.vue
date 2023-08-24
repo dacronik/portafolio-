@@ -178,7 +178,7 @@ export default {
 .container {
     min-height: 100vh;
     min-width: 100%;
-    background-color: #0F172A;
+    background-color: #27104e;
 }
 
 </style>

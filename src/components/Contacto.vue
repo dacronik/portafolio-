@@ -178,7 +178,7 @@ export default {
 .container {
     min-height: 100vh;
     min-width: 100%;
-    background-color: #0F172A;
+    background-color: #27104e;
 }
 .modal-fade-enter-active, .modal-fade-leave-active {
   transition: opacity 0.6s, transform 0.6s;
